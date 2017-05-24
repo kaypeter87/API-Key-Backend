@@ -1,0 +1,12 @@
+{
+    "name": "apikeybackend",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node apikey.js"
+    },
+    "dependencies": {
+        "express": "4.15.3"
+    },
+    "author" : "Peter Kay",
+    "license" : "MIT"
+}
