@@ -10,7 +10,7 @@
   "dependencies": {
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
-    "isometric-fetch": "^2.2.1"
+    "isomorphic-fetch": "^2.2.1"
   },
   "author": "Peter Kay",
   "license": "ISC"
