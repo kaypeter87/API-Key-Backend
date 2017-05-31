@@ -1,17 +1,22 @@
 // specify env file path
 require('dotenv').config({path: 'keys.env'});
-var http = require('http');
+var fetch = require('isomorphic-fetch');
+var express = require('express');
+var app = express();
+
+var weatherKey = process.env.WEATHER_KEY;
+var weatherURL = 'http://api.openweathermap.org/data/2.5/forecast?units=imperial?APPID=' + weatherKey;
 
 // console log API Key test
-function onRequest(request, response) {
-    var key = process.env.WEATHER_KEY;
-    console.log("You asked for pie!" + request.url);
-    console.log(key);
-    response.writeHead(200, {"Content-Type": "text/plain"});
-    response.write("Now here's your pie!");
-    response.end();
-}
+app.get('/weather/:lat:lon', function (req, res) {
+    fetch(`${weatherURL}?lat=${req.params.lat}, &lon=${req.params.lon}`)
+        .then(response => response.json())
+        .then(weather => res.send(weather))
+        .catch(error => res.send(error))
+})
 
 // verify server is running
-http.createServer(onRequest).listen(8888);
-console.log("I'm alive!");
+app.listen(3030, function () {
+    console.log("I'm alive!");
+    console.log(weatherURL);
+})
