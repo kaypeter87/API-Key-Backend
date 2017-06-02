@@ -12,7 +12,7 @@ As an example, this backend uses the openweather API to demonstrate its function
 4. Create a .env file and store your Open Weather API Key within it, like this:
 
 ```
-API_KEY=pasteyourapikeyhere12345678thecakeisalie
+WEATHER_KEY=pasteyourapikeyhere12345678thecakeisalie
 ```
 5. Then run `node apikey.js`
 6. In your browser, go to `localhost:11646/weather/insertLAT/insertLON` to get a JSON response from the openweather API!
