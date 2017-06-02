@@ -1,6 +1,6 @@
 # API Keys on the Backend
 
-I created this simple backend using node.js with the express framework to store my API Keys. You will be able to make calls to this backend for any data without exposing your API Keys as it is stored in a dotenv file.
+I created this simple backend using node.js, with the express framework, to store my API Keys. You will be able to make calls to this backend to get any data without exposing your precious keys. Enjoy!
 
 ## How to Run
 
