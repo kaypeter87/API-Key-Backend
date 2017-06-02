@@ -4,6 +4,8 @@ I created this simple backend using node.js, with the express framework, to stor
 
 ## How to Run
 
+As an example, this backend uses the openweather API to demonstrate its function.
+
 1. `git clone https://github.com/deuscode/API-Key-Backend.git`
 2. `cd API-Key-Backend` and `npm install`
 3. Go to `openweathermap.org` and create an account & API Key
