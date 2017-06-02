@@ -15,6 +15,6 @@ app.get('/weather/:lat/:lon', function (req, res) {
 })
 
 // verify server is running
-app.listen(3030, function () {
+app.listen(11646, function () {
     console.log("I'm alive!");
 })
