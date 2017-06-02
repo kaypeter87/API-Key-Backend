@@ -14,8 +14,7 @@ app.get('/weather/:lat/:lon', function (req, res) {
         .catch(error => res.send(error))
 })
 
-// verify server is running and dotenv test
+// verify server is running
 app.listen(3030, function () {
     console.log("I'm alive!");
-    console.log(weatherURL);
 })
