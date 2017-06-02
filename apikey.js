@@ -6,6 +6,14 @@ var app = express();
 
 var weatherURL = `http://api.openweathermap.org/data/2.5/weather?units=imperial&APPID=${process.env.WEATHER_KEY}`
 
+// enable CORS
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    next();
+})
+
 // express callback function for JSON fetch
 app.get('/weather/:lat/:lon', function (req, res) {
     fetch(`${weatherURL}&lat=${req.params.lat}&lon=${req.params.lon}`)
