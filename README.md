@@ -58,7 +58,7 @@ require('dotenv').config({path: 'your_env_file.env'});
 
 ## Hosting
 1. You may host this with any webhost that supports node.js
-2. Make sure you intall the npm modules
+2. Make sure you install the npm modules
 3. Check with your host's software documentation for more info
 
 ## Thank you!
