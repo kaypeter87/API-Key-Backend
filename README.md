@@ -1,4 +1,7 @@
 # API Keys on the Backend
+created by Peter Kay
+
+## Introduction
 
 I created this simple backend using node.js, with the express framework, to store my API Keys. You will be able to make calls to this backend to get any data without exposing your precious keys. Enjoy!
 
@@ -55,7 +58,7 @@ require('dotenv').config({path: 'your_env_file.env'});
 
 ## Hosting
 1. You may host this with any webhost that supports node.js
-2. Make sure you intall the npm modules
+2. Make sure you install the npm modules
 3. Check with your host's software documentation for more info
 
 ## Thank you!
