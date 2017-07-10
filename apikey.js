@@ -1,5 +1,5 @@
 // specify env file path within the dotenv require module
-require('dotenv').config({path: 'path_to_file.env'});
+require('dotenv').config({path: 'keys.env'});
 var fetch = require('isomorphic-fetch');
 var express = require('express');
 var app = express();
@@ -8,6 +8,7 @@ var app = express();
 var weatherURL = `http://api.openweathermap.org/data/2.5/weather?units=imperial&APPID=${process.env.WEATHER_KEY}`;
 var forecastURL = `http://api.openweathermap.org/data/2.5/forecast?units=imperial&APPID=${process.env.WEATHER_KEY}`;
 var twitchURL = `https://api.twitch.tv/kraken/channels/`;
+var twitchURLStreams = 'https://api.twitch.tv/kraken/streams/';
 
 // enable CORS for cross-browser support
 app.use(function(req, res, next) {
@@ -32,6 +33,12 @@ app.get('/forecast/:lat/:lon', function (req, res) {
 });
 app.get('/channels/:channel', function (req, res) {
     fetch(`${twitchURL}${req.params.channel}?client_id=${process.env.TWITCH_KEY}`)
+        .then(response => response.json())
+        .then(stream => res.send(stream))
+        .catch(error => res.send(error))
+});
+app.get('/streams/:stream', function (req, res) {
+    fetch(`${twitchURLStreams}${req.params.stream}?client_id=${process.env.TWITCH_KEY}`)
         .then(response => response.json())
         .then(stream => res.send(stream))
         .catch(error => res.send(error))
